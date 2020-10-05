@@ -11,6 +11,8 @@ var fruits;
 var fruitGroup;
 var fruit1_img, fruit2_img, fruit3_img, fruit4_img, fruit5_img;
 var player_img;
+var player1Score = 0;
+var player2Score = 0;
 
 
 function preload(){
