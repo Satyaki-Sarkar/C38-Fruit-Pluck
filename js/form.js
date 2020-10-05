@@ -48,6 +48,8 @@ class Form{
             player.updateCount(0);
             game.update(0);
             database.ref('players').remove();
+            database.ref('player1Score').update({player1Score : 0});
+            database.ref('player2Score').update({player2Score : 0});
             window.location.reload();
         });
 
