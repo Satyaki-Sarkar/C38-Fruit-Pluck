@@ -10,27 +10,6 @@ class Game{
 
     }
 
-    getScore() {
-        database.ref('player1Score').on("value",function (data){
-            player1Score = data.val();
-        });
-        database.ref('player2Score').on("value",function (data){
-            player2Score = data.val();
-        });
-    }
-
-    updateScore1(score){
-        database.ref('/').update({
-            player1Score: score
-        });
-    }
-
-    updateScore2(score){
-        database.ref('/').update({
-            player2Score: score
-        });
-    }
-
     update(state) {
         database.ref('/').update({
             gameState: state
@@ -131,11 +110,11 @@ class Game{
                         if(player1.isTouching(fruit)){
                         fruit.destroy();
                         player1Score+=1;
-                        this.updateScore1(player1Score);
+                        player1.updateScore(player1Score);
                     }else if(player2.isTouching(fruit)){
                         fruit.destroy();
                         player2Score++;
-                        this.updateScore2(player2Score);
+                        player2.updateScore(player2Score);
                     }
                     if(fruit.y>height+40){
                         fruit.destroy();

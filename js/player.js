@@ -13,6 +13,15 @@ class Player {
         })
     }
 
+    getScore() {
+        database.ref('player1Score').on("value",function (data){
+            player1Score = data.val();
+        });
+        database.ref('player2Score').on("value",function (data){
+            player2Score = data.val();
+        });
+    }
+
     updateCount(count) {
         database.ref('/').update({
             playerCount: count
@@ -25,6 +34,13 @@ class Player {
             name: this.name,
             distance: this.distance,
             score:this.score
+        });
+    }
+
+    updateScore(score){
+        var playerScore = "player"+this.index+"Score";
+        database.ref(playerScore).update({
+            playerScore: score
         });
     }
 
