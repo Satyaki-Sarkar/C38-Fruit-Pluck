@@ -110,11 +110,11 @@ class Game{
                         if(player1.isTouching(fruit)){
                         fruit.destroy();
                         player1Score+=1;
-                        player1.updateScore(player1Score);
+                        player.updateScore(player1Score);
                     }else if(player2.isTouching(fruit)){
                         fruit.destroy();
                         player2Score++;
-                        player2.updateScore(player2Score);
+                        player.updateScore(player2Score);
                     }
                     if(fruit.y>height+40){
                         fruit.destroy();

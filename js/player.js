@@ -39,7 +39,7 @@ class Player {
 
     updateScore(score){
         var playerScore = "player"+this.index+"Score";
-        database.ref(playerScore).update({
+        database.ref('/').update({
             playerScore: score
         });
     }
