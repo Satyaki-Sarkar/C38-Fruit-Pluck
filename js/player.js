@@ -13,14 +13,7 @@ class Player {
         })
     }
 
-    getScore() {
-        database.ref('player1Score').on("value",function (data){
-            player1Score = data.val();
-        });
-        database.ref('player2Score').on("value",function (data){
-            player2Score = data.val();
-        });
-    }
+    
 
     updateCount(count) {
         database.ref('/').update({
@@ -37,11 +30,17 @@ class Player {
         });
     }
 
-    updateScore(score){
-        var playerScore = "player"+this.index+"Score";
-        database.ref('/').update({
-            playerScore: score
-        });
+    updateScore(score,indexValue){
+        if(indexValue===1){
+            database.ref('/').update({
+                player1Score: score
+            });
+        }else if(indexValue===2){
+            database.ref('/').update({
+                player2Score: score
+            });
+        }
+        
     }
 
     static getPlayerInfo() {

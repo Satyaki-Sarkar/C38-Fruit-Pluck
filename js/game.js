@@ -107,14 +107,13 @@ class Game{
                      //fill code here, to destroy the objects.
                      for (var i = 0; i < fruitGroup.length; i++) {
                         var fruit = fruitGroup.get(i);
-                        if(player1.isTouching(fruit)){
+                        if(player1.isTouching(fruit) && player.index===1){
                         fruit.destroy();
                         player1Score+=1;
-                        player.updateScore(player1Score);
-                    }else if(player2.isTouching(fruit)){
+                        player.updateScore(player1Score,1);
+                    }else if(player2.isTouching(fruit) && player.index===2){
                         fruit.destroy();
-                        player2Score++;
-                        player.updateScore(player2Score);
+                        player2Score++;player.updateScore(player2Score,2);
                     }
                     if(fruit.y>height+40){
                         fruit.destroy();
