@@ -35,7 +35,8 @@ class Game{
 
         }
     
-    play(){
+    play()
+    {
         
         form.hide();
 
@@ -88,7 +89,7 @@ class Game{
                     fruits.velocityY = 6;
                     var rand = Math.round(random(1,5));
                     switch(rand){
-                    case 1: fruits.addImage("fruit1",fruit1_img);
+                        case 1: fruits.addImage("fruit1",fruit1_img);
                         break;
                         case 2: fruits.addImage("fruit1", fruit2_img);
                         break;
@@ -113,7 +114,8 @@ class Game{
                         player.updateScore(player1Score,1);
                     }else if(player2.isTouching(fruit) && player.index===2){
                         fruit.destroy();
-                        player2Score++;player.updateScore(player2Score,2);
+                        player2Score++;
+                        player.updateScore(player2Score,2);
                     }
                     if(fruit.y>height+40){
                         fruit.destroy();
@@ -121,21 +123,9 @@ class Game{
                 }
                   }
                 
-                  if(player1Score===30){
+                  if(player1Score===30 || player2Score===30){
                       gameState=2;
-                      if(index===1){
-                        swal({
-                            title : "Good Job",
-                            text  : "You Won !!",
-                            icon  : "sucess"
-                        });
                       }
-                    }
-         
-         
-        
-         
-
     }
 
     end(){
