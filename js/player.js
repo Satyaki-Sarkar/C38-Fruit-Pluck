@@ -13,16 +13,6 @@ class Player {
         })
     }
 
-    // getScore(){
-    //     database.ref('player1Score').on("value",function(data){
-    //         player1Score = data.val();
-    //     });
-    //     database.ref('player2Score').on("value",function(data){
-    //         player2Score = data.val();
-    //     });
-    // }
-    
-
     updateCount(count) {
         database.ref('/').update({
             playerCount: count
